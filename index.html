@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+  <!-- create your markup and styles -->
+  <div class="container" id="cont">
+    <button class="arrow" id="righty">⇦</button>
+  <div id="carousel">
+    
+    
+  <ul id="listy">
+
+    <li><img src="https://en.js.cx/carousel/1.png"></li>
+    <li><img src="https://en.js.cx/carousel/2.png"></li>
+    <li><img src="https://en.js.cx/carousel/3.png"></li>
+    <li><img src="https://en.js.cx/carousel/4.png"></li>
+    <li><img src="https://en.js.cx/carousel/5.png"></li>
+    <li><img src="https://en.js.cx/carousel/6.png"></li>
+    <li><img src="https://en.js.cx/carousel/7.png"></li>
+    <li><img src="https://en.js.cx/carousel/8.png"></li>
+    <li><img src="https://en.js.cx/carousel/9.png"></li>
+    <li><img src="https://en.js.cx/carousel/10.png"></li>
+  </ul>
+ 
+  </div> 
+  <button class="arrow" id="lefty">⇨</button>
+  </div>
+  
+  <script>
+    // label the images to visually track them, just for convenience,
+    // this code can be removed
+    let container = document.getElementById("cont");
+    let cord = container.getBoundingClientRect();
+    let lst = document.getElementById("listy");
+    let arrows = document.getElementsByClassName("arrow");
+    for(let arrow of arrows){
+      let coords = arrow.getBoundingClientRect();
+      arrow.style.top = cord.height/2 - arrow.clientHeight/2+ 'px'; 
+      if(arrow.id == "lefty")
+      arrow.style.left = container.clientWidth - coords.width + 'px';
+    }
+    let images = document.getElementsByTagName("img")
+    righty.onclick = function(){
+      lst.scrollLeft = lst.scrollLeft - 3*images[0].width;
+    }
+    lefty.onclick = function(){
+      lst.scrollLeft = lst.scrollLeft + 3*images[0].width;
+    }
+
+    // ...your code to make carousel alive!
+  </script>
+</body>
+</html> 
